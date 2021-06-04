@@ -1,10 +1,10 @@
 import './App.css';
-import TestFunction from './components/calculator'
+import FrontEnd from './components/calculator'
 
 function App() {
   return (
     <div>
-      <TestFunction />
+      <FrontEnd />
     </div>
   );
 }

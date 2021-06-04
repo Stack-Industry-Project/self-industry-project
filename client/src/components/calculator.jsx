@@ -1,11 +1,18 @@
 import React, { useState } from 'react';
+let age = 30;
 
-const TestFunction = () => {
+const FrontEnd = (age) => {
   return (
     <div>
-      <h1>working</h1>
+      <h1> Front-end working</h1>
     </div>
   )
 }
 
-export default TestFunction
+const TestFunction = (age) => {
+  return (
+    age
+  )
+}
+
+export default { FrontEnd, TestFunction }
