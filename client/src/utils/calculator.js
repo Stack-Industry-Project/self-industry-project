@@ -5,12 +5,11 @@ const Calculation = (data) => {
 
   // loop through for every working year
 
-  // For each working year iteration, push an object into the array that contains a key for every input. 
-  // Each object represents a year
+  // For each working year iteration, push an object into the array that contains a key 
+  // for every input. Each object represents a year.
 
 
-
-}
+};
 
 // sample data
 
@@ -32,4 +31,6 @@ const Calculation = (data) => {
 
 let data = {
 
-}
+};
+
+export default Calculation;
