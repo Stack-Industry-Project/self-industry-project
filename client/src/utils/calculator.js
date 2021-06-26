@@ -5,7 +5,7 @@ let currentAge = 30
 let retirementAge = 67
 let currentRetirementSavings = 0
 let contributionPercentOfIncome = 0.05
-let InvestmentAnnualReturn = 0.15
+let InvestmentAnnualReturn = 1.105
 let lifeExpectancy = 90
 let currentSalary = 55000
 let ExpectedAnnualIncomeIncreasePercent = 1.02
@@ -47,7 +47,8 @@ const Calculation = () => {
     workingSavingsArr.push({ ...currentYear });
     currentYear.year++
     currentYear.age++
-    currentYear.salary = (currentYear.salary * ExpectedAnnualIncomeIncreasePercent).toFixed(2)
+    currentYear.savings = parseFloat(((currentYear.savings + (currentYear.salary * contributionPercentOfIncome)) * InvestmentAnnualReturn).toFixed(2))
+    currentYear.salary = parseFloat((currentYear.salary * ExpectedAnnualIncomeIncreasePercent).toFixed(2))
   }
   return workingSavingsArr
 };
