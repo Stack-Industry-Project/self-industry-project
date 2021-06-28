@@ -1,54 +1,24 @@
-import React, { useState } from 'react'
-
-// set variables to each user input
-let currentAge = 30
-let retirementAge = 67
-let currentRetirementSavings = 0
-let contributionPercentOfIncome = 0.05
-let InvestmentAnnualReturn = 1.105
-let lifeExpectancy = 90
-let currentSalary = 55000
-let ExpectedAnnualIncomeIncreasePercent = 1.02
-
-// set variables to input calculations
-let date = new Date()
-console.log(typeof (date))
-let workingYears = (retirementAge - currentAge)
-let retirementYears = (lifeExpectancy - retirementAge)
-
-// hidden inputs
-let newAnnualReturnPercentInRetirement = 0.082
-let inflationRate = 0.081
-let totalAmountContributed = 'xxx'
-let returnFromInterest = currentRetirementSavings - totalAmountContributed
+// let workingYears = (retirementAge - currentAge)
+// let retirementYears = (lifeExpectancy - retirementAge)
+// let returnFromInterest = currentRetirementSavings - totalAmountContributed
 
 
-// set an empty array for working years
-let workingSavingsArr = []
+const Calculation = (calculationProperties, currentYear) => {
+  let { retirementAge, contributionPercentOfIncome, investmentAnnualReturn, lifeExpectancy, expectedAnnualIncomeIncreasePercent, newAnnualReturnPercentInRetirement, inflationRate } = calculationProperties
+  let currentYearData = { ...currentYear }
+  let workingSavingsArr = []
 
-// set an empty array for retirement years
-let retiredSavingsArr = []
-
-// create an object that represents the first year's data
-let currentYear = {
-  year: date.getFullYear(),
-  age: currentAge,
-  savings: currentRetirementSavings,
-  salary: currentSalary,
-  totalAmountContributed: 0,
-  returnFromInterest: 0
-}
-
-const Calculation = () => {
   // loop through for every working year
-  for (let i = 0; i < (retirementAge - currentAge); i++) {
+  for (let i = currentYear.currentAge; i <= retirementAge; i++) {
     // For each working year iteration, push an object into the workingSavings array that contains a key
     // for every input. Each object represents a year.
-    workingSavingsArr.push({ ...currentYear });
-    currentYear.year++
-    currentYear.age++
-    currentYear.savings = parseFloat(((currentYear.savings + (currentYear.salary * contributionPercentOfIncome)) * InvestmentAnnualReturn).toFixed(2))
-    currentYear.salary = parseFloat((currentYear.salary * ExpectedAnnualIncomeIncreasePercent).toFixed(2))
+    workingSavingsArr.push({ ...currentYearData });
+    currentYearData.year++
+    currentYearData.currentAge++
+    currentYearData.currentRetirementSavings = parseFloat(((currentYearData.currentRetirementSavings + (currentYearData.currentSalary * contributionPercentOfIncome)) * investmentAnnualReturn).toFixed(2))
+    currentYearData.currentSalary = parseFloat((currentYearData.currentSalary * expectedAnnualIncomeIncreasePercent).toFixed(2))
+    currentYearData.totalAmountContributed = parseFloat(currentYearData.currentSalary * contributionPercentOfIncome).toFixed(2)
+    currentYearData.returnFromInterest = parseFloat(currentYearData.currentRetirementSavings - currentYearData.totalAmountContributed).toFixed(2)
   }
   return workingSavingsArr
 };
