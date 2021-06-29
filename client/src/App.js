@@ -1,10 +1,11 @@
 import './App.css';
-import FrontEnd from './components/calculator'
+import Calculator from './components/calculator'
+import React from 'react'
 
 function App() {
   return (
     <div>
-      <FrontEnd />
+      <Calculator />
     </div>
   );
 }
