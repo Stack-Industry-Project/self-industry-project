@@ -14,7 +14,7 @@ const Calculator = () => {
     withdrawalPercentOfRetirement: 0.04
   }
 
-  let currentYear = {
+  let defaultCurrentYear = {
     year: new Date().getFullYear(),
     currentAge: 30,
     currentRetirementSavings: 0,
@@ -24,6 +24,8 @@ const Calculator = () => {
   }
 
   let [calculationProperties, setCalculationProperties] = useState(defaultCalculationProperties)
+  let [currentYear, setCurrentYear] = useState(defaultCurrentYear)
+
   let [savingsData, setSavingsData] = useState([])
 
   useEffect(() => {
@@ -31,11 +33,18 @@ const Calculator = () => {
     const fullData = Calculation(calculationProperties, currentYear)
     setSavingsData(fullData)
     console.log(fullData)
-  }, [calculationProperties])
+  }, [calculationProperties, currentYear])
 
   return (
     <div>
+      <h4>Current Age</h4>
+      <input value={currentYear.currentAge} onChange={(event) => { setCurrentYear({ ...currentYear, currentAge: event.target.value }) }}></input>
+      <h4>Current Retirement Savings</h4>
+      <input value={currentYear.currentRetirementSavings} onChange={(event) => { setCurrentYear({ ...currentYear, currentRetirementSavings: event.target.value }) }}></input>
+      <h4>Expected Retirement Age</h4>
       <input value={calculationProperties.retirementAge} onChange={(event) => { setCalculationProperties({ ...calculationProperties, retirementAge: event.target.value }) }}></input>
+      <h4>Contribution % of Income</h4>
+      <input value={calculationProperties.contributionPercentOfIncome} onChange={(event) => { setCalculationProperties({ ...calculationProperties, contributionPercentOfIncome: event.target.value }) }}></input>
       <ul>
         {savingsData.map(year => (
           <li key={year.year}> {`Year: ${year.year} Age: ${year.currentAge} Savings: ${year.currentRetirementSavings} Contributions: ${year.totalAmountContributed} Total Return From Interest ${year.returnFromInterest}`}</li>
