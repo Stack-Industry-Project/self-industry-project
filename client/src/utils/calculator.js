@@ -4,7 +4,7 @@
 
 
 const Calculation = (calculationProperties, currentYear) => {
-  let { retirementAge, contributionPercentOfIncome, investmentAnnualReturn, lifeExpectancy, expectedAnnualIncomeIncreasePercent, newAnnualReturnPercentInRetirement, inflationRate } = calculationProperties
+  let { retirementAge, contributionPercentOfIncome, investmentAnnualReturn, lifeExpectancy, expectedAnnualIncomeIncreasePercent, newAnnualReturnPercentInRetirement, inflationRate, withdrawalPercentOfRetirement } = calculationProperties
   let currentYearData = { ...currentYear }
   let workingSavingsArr = []
 
@@ -20,9 +20,17 @@ const Calculation = (calculationProperties, currentYear) => {
     currentYearData.totalAmountContributed = parseFloat(currentYearData.currentSalary * contributionPercentOfIncome).toFixed(2)
     currentYearData.returnFromInterest = parseFloat(currentYearData.currentRetirementSavings - currentYearData.totalAmountContributed).toFixed(2)
   }
+  for (let j = currentYear.currentAge; j <= lifeExpectancy; j++) {
+    workingSavingsArr.push({ ...currentYearData });
+    currentYearData.year++
+    currentYearData.currentAge++
+    currentYearData.currentRetirementSavings = parseFloat((currentYearData.currentRetirementSavings * newAnnualReturnPercentInRetirement) - (currentYear.currentRetirementSavings * withdrawalPercentOfRetirement)).toFixed(2)
+    currentYearData.currentSalary = parseFloat(0)
+    currentYearData.totalAmountContributed = parseFloat(0)
+    currentYearData.returnFromInterest = parseFloat(currentYearData.currentRetirementSavings - currentYearData.totalAmountContributed).toFixed(2)
+  }
   return workingSavingsArr
 };
-
 
 
 // sample data
