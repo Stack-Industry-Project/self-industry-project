@@ -10,7 +10,7 @@ const Calculator = () => {
     lifeExpectancy: 90,
     expectedAnnualIncomeIncreasePercent: 1.02,
     newAnnualReturnPercentInRetirement: 1.025,
-    inflationRate: 0.081,
+    inflationRate: 0.0181,
     withdrawalPercentOfRetirement: 0.04
   }
 
