@@ -10,7 +10,7 @@ const Calculator = (props) => {
     lifeExpectancy: 90,
     expectedAnnualIncomeIncreasePercent: 1.02,
     newAnnualReturnPercentInRetirement: 1.025,
-    inflationRate: 0.081,
+    inflationRate: 0.0181,
     withdrawalPercentOfRetirement: 0.04
   }
 
@@ -40,12 +40,15 @@ const Calculator = (props) => {
     <div>
       <h4>Current Age</h4>
       <input value={currentYear.currentAge} onChange={(event) => { setCurrentYear({ ...currentYear, currentAge: event.target.value }) }}></input>
+      <h4>Current Salary</h4>
+      <input value={currentYear.currentSalary} onChange={(event) => { setCurrentYear({ ...currentYear, currentSalary: event.target.value }) }}></input>
       <h4>Current Retirement Savings</h4>
       <input value={currentYear.currentRetirementSavings} onChange={(event) => { setCurrentYear({ ...currentYear, currentRetirementSavings: event.target.value }) }}></input>
       <h4>Expected Retirement Age</h4>
       <input value={calculationProperties.retirementAge} onChange={(event) => { setCalculationProperties({ ...calculationProperties, retirementAge: event.target.value }) }}></input>
-      <h4>Contribution % of Income</h4>
-      <input value={calculationProperties.contributionPercentOfIncome} onChange={(event) => { setCalculationProperties({ ...calculationProperties, contributionPercentOfIncome: event.target.value }) }}></input>
+      <h4>Life Expectancy</h4>
+      <input value={calculationProperties.lifeExpectancy} onChange={(event) => { setCalculationProperties({ ...calculationProperties, lifeExpectancy: event.target.value }) }}></input>
+
       <ul>
         {savingsData.map(year => (
           <li key={year.year}> {`Year: ${year.year} Age: ${year.currentAge} Savings: ${year.currentRetirementSavings} Contributions: ${year.totalAmountContributed} Total Return From Interest ${year.returnFromInterest}`}</li>
