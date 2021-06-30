@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Calculation from '../utils/calculator'
 
-const Calculator = () => {
+const Calculator = (props) => {
 
   let defaultCalculationProperties = {
     retirementAge: 67,
@@ -22,7 +22,7 @@ const Calculator = () => {
     totalAmountContributed: 0,
     returnFromInterest: 0
   }
-
+  let setGraphData = props.setterFunction
   let [calculationProperties, setCalculationProperties] = useState(defaultCalculationProperties)
   let [currentYear, setCurrentYear] = useState(defaultCurrentYear)
 
@@ -32,6 +32,7 @@ const Calculator = () => {
 
     const fullData = Calculation(calculationProperties, currentYear)
     setSavingsData(fullData)
+    setGraphData(fullData)
     console.log(fullData)
   }, [calculationProperties, currentYear])
 

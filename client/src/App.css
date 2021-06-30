@@ -1,1 +1,5 @@
-
+.line {
+    justify-content: flex-end;
+   width: 20px;
+   height: 20px;
+}
