@@ -7,10 +7,11 @@ const twoDec = (number) => {
 }
 
 const Calculation = (calculationProperties, currentYear) => {
-  let { retirementAge, contributionPercentOfIncome, investmentAnnualReturn, lifeExpectancy, expectedAnnualIncomeIncreasePercent, newAnnualReturnPercentInRetirement, inflationRate, withdrawalPercentOfRetirement } = calculationProperties
+  let { retirementAge, contributionPercentOfIncome, investmentAnnualReturn, lifeExpectancy,
+  expectedAnnualIncomeIncreasePercent, newAnnualReturnPercentInRetirement, inflationRate,
+   withdrawalPercentOfRetirement } = calculationProperties
   let currentYearData = { ...currentYear }
   let workingSavingsArr = []
-
   // loop through for every working year
   for (let i = currentYear.currentAge; i < retirementAge; i++) {
     // For each working year iteration, push an object into the workingSavings array that contains a key
