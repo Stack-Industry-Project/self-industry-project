@@ -1,4 +1,5 @@
 import './App.css';
+import Header from './components/Header'
 import Calculator from './components/calculator'
 import React, { useState} from 'react'
 import {Line} from 'react-chartjs-2'
@@ -10,6 +11,7 @@ function App() {
 
   return (
     <>
+     <Header />
      <LineChart classname="line" data={graphData} />
      
     <div>
