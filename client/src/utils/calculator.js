@@ -23,14 +23,14 @@ const Calculation = (calculationProperties, currentYear) => {
     currentYearData.totalAmountContributed = twoDec(parseFloat(currentYearData.currentSalary * contributionPercentOfIncome))
     currentYearData.returnFromInterest = twoDec(parseFloat(currentYearData.currentRetirementSavings - currentYearData.totalAmountContributed))
   }
-  for (let j = retirementAge + 1; j <= lifeExpectancy + 1; j++) {
+  for (let j = retirementAge + 1; j <= parseInt(lifeExpectancy) + 1; j++) {
     workingSavingsArr.push({ ...currentYearData });
     currentYearData.year++
     currentYearData.currentAge++
-    currentYearData.currentRetirementSavings = twoDec((parseFloat(currentYearData.currentRetirementSavings) * parseFloat(newAnnualReturnPercentInRetirement)) - (parseFloat(currentYear.currentRetirementSavings) * parseFloat(inflationRate)))
+    currentYearData.currentRetirementSavings = twoDec((parseFloat(currentYearData.currentRetirementSavings) * parseFloat(newAnnualReturnPercentInRetirement)) - (parseFloat(currentYearData.currentRetirementSavings) * parseFloat(withdrawalPercentOfRetirement)))
     currentYearData.currentSalary = parseFloat(0)
     currentYearData.totalAmountContributed = parseFloat(0)
-    currentYearData.returnFromInterest = twoDec(parseFloat(currentYearData.currentRetirementSavings - currentYearData.totalAmountContributed))
+    currentYearData.returnFromInterest = twoDec(parseFloat(currentYearData.currentRetirementSavings - parseFloat(currentYearData.totalAmountContributed)))
   }
   return workingSavingsArr
 };
