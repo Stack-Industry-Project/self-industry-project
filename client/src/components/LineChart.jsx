@@ -10,9 +10,11 @@ import { Line } from 'react-chartjs-2';
     
     export default function LineChart(props) {
         const labels = props.data.map(L => L.currentAge)
+        const labels2 = props.data.map(L => L.currentAge)
         const totalSavings = props.data.map(S => S.currentRetirementSavings)
         const totalContributed = props.data.map(TC => TC.totalAmountContributed)
         console.log(totalSavings)
+    
         const data = {
             labels: labels,
             datasets: [
@@ -30,9 +32,11 @@ import { Line } from 'react-chartjs-2';
               }
             ]
           };
+          
     return (
       <div className="graph">
         <Line data={data} />
+      
       </div>
     );
   }

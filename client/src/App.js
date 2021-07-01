@@ -10,7 +10,7 @@ function App() {
 
   return (
     <>
-     <LineChart classname="line" data={graphData} />
+     <LineChart data={graphData} />
      
     <div>
       <Calculator setterFunction={setGraphData} />
