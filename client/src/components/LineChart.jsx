@@ -21,14 +21,20 @@ import { Line } from 'react-chartjs-2';
               {
                 label: "Savings",
                 data: totalSavings,
-                backgroundColor: "#00ADEE",
-                borderColor: "#FF8C00"
+                backgroundColor: "#FF8C00",
+                borderColor: "#FF8C00",
+                fill: true
               },
               {
                 label: "Total Contribution",
                 data: totalContributed,
                 fill: false,
-                borderColor: "#00ADEE"
+                borderColor: "#00ADEE",
+                backgroundColor: "#00ADEE",
+
+          
+                
+                fill: true
               }
             ]
           };
