@@ -3,3 +3,13 @@
    width: 20px;
    height: 20px;
 }
+
+.graph {
+    width: 75%;
+    padding-left: 5%;
+}
+
+.content {
+    display: flex;
+    padding-top: 66px;
+}
