@@ -2,7 +2,7 @@ import './App.css';
 import Calculator from './components/calculator'
 import React, { useState} from 'react'
 import {Line} from 'react-chartjs-2'
-import { Header } from './components/common'
+import { Header, Footer } from './components/common'
 
 import LineChart from './components/LineChart';
 
@@ -22,6 +22,7 @@ function App() {
       <LineChart classname="line" data={graphData} />
       
       </section>
+      <Footer />
     </>
   );
 }
