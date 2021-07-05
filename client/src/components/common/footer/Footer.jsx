@@ -65,7 +65,7 @@ const Footer = () => {
           </section>
         </section>
         <section className='footer-center'>
-          <section>
+          <section className='footer-center-title'>
             Join Self
           </section>
           <section>
@@ -114,12 +114,8 @@ const Footer = () => {
             All Credit Builder Accounts made by Lead Bank, Member FDIC, Equal Housing Lender, Sunrise Banks, N.A. Member FDIC, Equal Housing Lender or Atlantic Capital Bank, N.A. Member FDIC, Equal Housing Lender. Subject to ID Verification. Individual borrowers must be a U.S. Citizen or permanent resident and at least 18 years old. Valid bank account and Social Security Number are required. All loans are subject to ID verification and consumer report review and approval. Results are not guaranteed. Improvement in your credit score is dependent on your specific situation and financial behavior. Failure to make monthly minimum payments by the payment due date each month may result in delinquent payment reporting to credit bureaus which may negatively impact your credit score. This product will not remove negative credit history from your credit report. All loans subject to approval. All Certificates of Deposit (CD) are deposited in Lead Bank, Member FDIC, Sunrise Banks, N.A., Member FDIC or Atlantic Capital Bank, N.A., Member FDIC.
           </section>
           <section>
-            Lead Bank. Member FDIC, Equal Housing Lender
-          </section>
-          <section>
-            Sunrise Banks, N.A. Member FDIC, Equal Housing Lender
-          </section>
-          <section>
+            Lead Bank. Member FDIC, Equal Housing Lender 
+            Sunrise Banks, N.A. Member FDIC, Equal Housing Lender 
             Atlantic Capital Bank, N.A. Member FDIC, Equal Housing Lender
           </section>
           <section>

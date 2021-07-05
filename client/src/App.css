@@ -11,5 +11,6 @@
 
 .content {
     display: flex;
-    padding-top: 66px;
+    margin-left: 2rem;
+    padding-top: 7rem;
 }
