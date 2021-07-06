@@ -2,8 +2,8 @@ import React from 'react';
 import { Line, Scatter } from 'react-chartjs-2';
 import '../App.css'
 
-    export default function LineChart(props) {
-       if (props.data.length === 0) {
+export default function LineChart(props) {
+  if (props.data.length === 0) {
 
     return (
       <>
@@ -36,10 +36,9 @@ import '../App.css'
                     radius: 0
                   }
                 },
-
-              },
-            ]
-          };
+      },
+    ]
+  };
 
   return (
     <div className="graph">
