@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Calculation from '../utils/calculator'
+import "../App.css"
 
 const Calculator = (props) => {
 
@@ -37,7 +38,7 @@ const Calculator = (props) => {
 
 
   return (
-    <div>
+    <div className="input-container">
       <h4>Current Age</h4>
       <input value={currentYear.currentAge} onChange={(event) => { setCurrentYear({ ...currentYear, currentAge: event.target.value }) }}></input>
       <h4>Current Salary</h4>
