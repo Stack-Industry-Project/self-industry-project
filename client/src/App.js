@@ -1,7 +1,7 @@
 import './App.css';
 import Calculator from './components/calculator'
-import React, { useState} from 'react'
-import {Line} from 'react-chartjs-2'
+import React, { useState } from 'react'
+import { Line } from 'react-chartjs-2'
 
 import LineChart from './components/LineChart';
 
@@ -10,12 +10,12 @@ function App() {
 
   return (
     <>
-     <LineChart classname="line" data={graphData} />
-     
-    <div>
-      <Calculator setterFunction={setGraphData} />
-     
-    </div>
+      <div>
+        <Calculator setterFunction={setGraphData} />
+      </div>
+      <div>
+        <LineChart data={graphData} />
+      </div>
     </>
   );
 }
