@@ -36,52 +36,43 @@ const plugin = {
               {
                 label: "Savings",
                 data: totalSavings,
-                backgroundColor: "#FF8C00",
-                borderColor: "#FF8C00",
-                hoverBorderWidth: 35,
+                backgroundColor: "#00ADEE",
+                borderWidth: 5,
+                borderColor: "#00ADEE",
+                hoverBorderWidth: 20,
                 point: false,
-                pointStyle:'circle',
+                pointStyle:'line',
+                pointHitRadius: 20,
                 stepped: false,
-                plugins: [plugin],
-                fill: false,
+                fill: true,
                 borderDash: [2000,2200],
                 elements: {
                   point: {
                     radius: 0
                   }
                 },
-                animations: {
-                  tension: {
-                    duration: 100,
-                    easing: 'easeInOutExpo',
-                    from: 1,
-                    to: 0,
-                    loop: true
-                  }
-                },
 
-                
-                
               },
-              {
-                label: "Total Contribution",
-                type: 'line',
-                data: totalContributed,
-                showLine: false,
-                options: {
-                  indexAxis: 'y',
-                  scales: {
-                    x: {
-                      beginAtZero: false
-                    }
-                  }
-                },
-                fill: false,
-                borderColor: "#00ADEE",
-                backgroundColor: "#00ADEE",
-                hoverBorderWidth: 35,
+              // {
+              //   label: "Total Contribution",
+              //   type: 'line',
+              //   data: totalContributed,
+              //   showLine: false,
+              //   borderDash: [2000,2200],
+              //   options: {
+              //     indexAxis: 'y',
+              //     scales: {
+              //       x: {
+              //         beginAtZero: false
+              //       }
+              //     }
+              //   },
+              //   fill: false,
+              //   borderColor: "#00ADEE",
+              //   backgroundColor: "#00ADEE",
+              //   hoverBorderWidth: 35,
               
-              }
+              // }
             ]
           };
     return (
