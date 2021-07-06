@@ -27,7 +27,7 @@ import '../App.css'
                 hoverBorderWidth: 20,
                 point: false,
                 pointStyle:'line',
-                pointHitRadius: 20,
+                pointHitRadius: 1000,
                 stepped: false,
                 fill: true,
                 borderDash: [2000,2200],
@@ -37,8 +37,8 @@ import '../App.css'
                   }
                 },
 
-              },
-            ]
+              }]
+            
           };
 
   return (
