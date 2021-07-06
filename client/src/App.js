@@ -1,5 +1,6 @@
 import './App.css';
 import Calculator from './components/calculator'
+
 import React, { useState} from 'react'
 import {Line} from 'react-chartjs-2'
 import { Header, Footer } from './components/common'
@@ -13,14 +14,10 @@ function App() {
     <>
       <Header />
       <section className='content'>
-     
       <div>
-        <Calculator setterFunction={setGraphData} />
-     
+        <Calculator setterFunction={setGraphData} /> 
       </div>
-
-      <LineChart classname="line" data={graphData} />
-      
+      <LineChart classname="line" data={graphData} />   
       </section>
       <Footer />
     </>

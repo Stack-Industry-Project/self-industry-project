@@ -9,7 +9,7 @@ const twoDec = (number) => {
 const Calculation = (calculationProperties, currentYear) => {
   let { retirementAge, contributionPercentOfIncome, investmentAnnualReturn, lifeExpectancy,
     expectedAnnualIncomeIncreasePercent, newAnnualReturnPercentInRetirement, inflationRate,
-    withdrawalPercentOfRetirement } = calculationProperties
+    expenses } = calculationProperties
   let currentYearData = { ...currentYear }
   let workingSavingsArr = []
   // loop through for every working year
@@ -28,7 +28,7 @@ const Calculation = (calculationProperties, currentYear) => {
     workingSavingsArr.push({ ...currentYearData });
     currentYearData.year++
     currentYearData.currentAge++
-    currentYearData.currentRetirementSavings = twoDec((parseFloat(currentYearData.currentRetirementSavings) * parseFloat(newAnnualReturnPercentInRetirement)) - (parseFloat(currentYearData.currentRetirementSavings) * parseFloat(withdrawalPercentOfRetirement)))
+    currentYearData.currentRetirementSavings = twoDec((parseFloat(currentYearData.currentRetirementSavings) * parseFloat(newAnnualReturnPercentInRetirement)) - parseFloat(expenses * 12))
     currentYearData.currentSalary = parseFloat(0)
     currentYearData.totalAmountContributed = parseFloat(0)
     currentYearData.returnFromInterest = twoDec(parseFloat(currentYearData.currentRetirementSavings - parseFloat(currentYearData.totalAmountContributed)))
