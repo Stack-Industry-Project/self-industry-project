@@ -11,7 +11,7 @@ const Calculator = (props) => {
     expectedAnnualIncomeIncreasePercent: 1.02,
     newAnnualReturnPercentInRetirement: 1.025,
     inflationRate: 0.0181,
-    withdrawalPercentOfRetirement: 0.04
+    expenses: 3800
   }
 
   let defaultCurrentYear = {
@@ -28,13 +28,13 @@ const Calculator = (props) => {
 
   let [savingsData, setSavingsData] = useState([])
 
-  useEffect(() => {
-
+  const calculate = () => {
     const fullData = Calculation(calculationProperties, currentYear)
     setSavingsData(fullData)
     setGraphData(fullData)
     console.log(fullData)
-  }, [calculationProperties, currentYear])
+  }
+
 
   return (
     <div>
@@ -42,19 +42,17 @@ const Calculator = (props) => {
       <input value={currentYear.currentAge} onChange={(event) => { setCurrentYear({ ...currentYear, currentAge: event.target.value }) }}></input>
       <h4>Current Salary</h4>
       <input value={currentYear.currentSalary} onChange={(event) => { setCurrentYear({ ...currentYear, currentSalary: event.target.value }) }}></input>
+      <h4>Contribution Percent of Income</h4>
+      <input value={calculationProperties.contributionPercentOfIncome} onChange={(event) => { setCalculationProperties({ ...calculationProperties, contributionPercentOfIncome: event.target.value }) }}></input>
       <h4>Current Retirement Savings</h4>
       <input value={currentYear.currentRetirementSavings} onChange={(event) => { setCurrentYear({ ...currentYear, currentRetirementSavings: event.target.value }) }}></input>
       <h4>Expected Retirement Age</h4>
       <input value={calculationProperties.retirementAge} onChange={(event) => { setCalculationProperties({ ...calculationProperties, retirementAge: event.target.value }) }}></input>
       <h4>Life Expectancy</h4>
       <input value={calculationProperties.lifeExpectancy} onChange={(event) => { setCalculationProperties({ ...calculationProperties, lifeExpectancy: event.target.value }) }}></input>
-      <button type="button" onClick={(event) => { }}>Calculate</button>
-
-      <ul>
-        {savingsData.map(year => (
-          <li key={year.year}> {`Year: ${year.year} Age: ${year.currentAge} Savings: ${year.currentRetirementSavings} Contributions: ${year.totalAmountContributed} Total Return From Interest ${year.returnFromInterest}`}</li>
-        ))}
-      </ul>
+      <h4>Expected Monthly Expenses in Retirement</h4>
+      <input value={calculationProperties.expenses} onChange={(event) => { setCalculationProperties({ ...calculationProperties, expenses: event.target.value }) }}></input>
+      <button type="button" onClick={calculate}>Calculate</button>
     </div>
   )
 }
