@@ -50,11 +50,11 @@ const Calculator = (props) => {
       <input value={calculationProperties.lifeExpectancy} onChange={(event) => { setCalculationProperties({ ...calculationProperties, lifeExpectancy: event.target.value }) }}></input>
       <button type="button" onClick={(event) => { }}>Calculate</button>
 
-      <ul>
+      {/* <ul>
         {savingsData.map(year => (
           <li key={year.year}> {`Year: ${year.year} Age: ${year.currentAge} Savings: ${year.currentRetirementSavings} Contributions: ${year.totalAmountContributed} Total Return From Interest ${year.returnFromInterest}`}</li>
         ))}
-      </ul>
+      </ul> */}
     </div>
   )
 }

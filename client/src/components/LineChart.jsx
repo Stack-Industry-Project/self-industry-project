@@ -1,5 +1,6 @@
 import React from 'react';
 import { Line } from 'react-chartjs-2';
+import '../App.css'
 //import Calculator and Calculation
 
     //allows you to set a range between two numbers
