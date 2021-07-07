@@ -1,6 +1,9 @@
 import './App.css';
 import Calculator from './components/calculator'
 import CheckContribution from './components/check-contribution';
+import Card1 from './components/card1'
+import Card2 from './components/card2'
+import Card3 from './components/card3'
 
 import React, { useState } from 'react'
 import { Line } from 'react-chartjs-2'
@@ -15,15 +18,23 @@ function App() {
   return (
     <>
       <Header />
-      <section className='content'>
-        <div>
+      <div className="top-container">
+        <div className="calc-container">
           <Calculator setterFunction={setGraphData} setCheckCont={setCheckCont} />
         </div>
-        <LineChart className="line" data={graphData} />
-        {checkCont !== 0 &&
-          <CheckContribution contributionPercentOfIncome={checkCont} />
-        }
-      </section>
+        <div className="right-container">
+          <div className="graph-container">
+            <LineChart className="line" data={graphData} />
+          </div>
+          {checkCont !== 0 &&
+            <div className="card-container">
+              <Card1 className="card" contributionPercentOfIncome={checkCont} />
+              <Card2 className="card" />
+              <Card3 className="card" />
+            </div>
+          }
+        </div>
+      </div>
       <Footer />
     </>
   );
