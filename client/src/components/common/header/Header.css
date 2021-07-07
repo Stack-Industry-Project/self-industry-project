@@ -1,5 +1,5 @@
 .header {
-  position: fixed;
+  /* position: fixed; */
   width: 100%;
   height: 66px;
   background-color: #00ADEE;
@@ -16,7 +16,7 @@
   height: 66px;
   z-index: 1001;
   text-transform: uppercase;
-  position: fixed;
+  /* position: fixed; */
   left: 0px;
   right: 0px;
   display: flex;

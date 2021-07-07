@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import "../App.css"
+import Card1 from './card1'
 
 const CheckContribution = (props) => {
   if (props.contributionPercentOfIncome < 0.10) {
     return (
-      <div>This is bad</div>
+      <div><Card1 /></div>
     )
   }
   return (
