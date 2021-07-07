@@ -64,4 +64,31 @@ height: 20px;
     border: 1px solid white;
     border-radius: 8px;
 }
+.report {
+    font-family: 'Montserrat', sans-serif;
+    text-align:center;
+
+}
+.bg-dark {
+    padding: 2rem;
+    width: 20%;
+    height: 20%;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(255, 140, 0);
+    box-shadow: 5px 10px 10px gray;
+    border-radius: 25px;
+    margin-top: 20px;
+    display: flex;
+}
+.box {
+    display: flex;
+    justify-content: space-between;
+    /* background-color: #00ADEE; */
+    transition: transform .2s;
+}
+
+.box :hover {
+    transform: scale(1.5);
+}
 
