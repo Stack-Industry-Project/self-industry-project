@@ -19,16 +19,20 @@ $white: rgb(255, 255, 255);
     @include flexAlign;
     margin: 0 auto;
     width: 60%;
+    max-width: 950px;
     height: 66px;
     justify-content: space-between;
     background-color: $blue;
-    max-width: 900px;
 
     &-left {
       @include flexAlign;
 
       &-links-container {
         @include flexAlign;
+      }
+
+      &-logo {
+        padding: 16px 8px 16px 0;
       }
     }
 
@@ -37,7 +41,8 @@ $white: rgb(255, 255, 255);
     }
 
     &-link {
-      margin: 0 0.8rem;
+      margin: 0 0.1rem;
+      padding: 12px 8px;
       color: $white;
       background: none;
       border: none;
@@ -45,6 +50,18 @@ $white: rgb(255, 255, 255);
       font-family: montserrat, sans-serif;
       font-size: 10px;
       font-weight: bold;
+      text-transform: uppercase;
+
+      &:hover {
+        cursor: pointer;
+      }
+  }
+
+  .link-highlight:hover {
+    border-radius: 8px;
+    background-color: $white;
+    border-radius: 8px;
+    color: $blue;
   }
 
   }
