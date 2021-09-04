@@ -1,4 +1,5 @@
 import './App.css';
+import './styles/styles.scss';
 import Calculator from './components/calculator'
 import CheckContribution from './components/check-contribution';
 import Card1 from './components/card1'

@@ -1,1 +1,65 @@
-/* No CSS *//*# sourceMappingURL=styles.css.map */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#nav-container {
+  width: 100%;
+  background-color: #00ADEE;
+}
+
+#nav-container .nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0 auto;
+  width: 60%;
+  height: 66px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background-color: #00ADEE;
+  max-width: 900px;
+}
+
+#nav-container .nav-left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#nav-container .nav-left-links-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#nav-container .nav-right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#nav-container .nav-link {
+  margin: 0 0.8rem;
+  color: white;
+  background: none;
+  border: none;
+  text-decoration: none;
+  font-family: montserrat, sans-serif;
+  font-size: 10px;
+  font-weight: bold;
+}
+/*# sourceMappingURL=styles.css.map */

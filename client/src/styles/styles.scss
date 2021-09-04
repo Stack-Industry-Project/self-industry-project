@@ -1,0 +1,51 @@
+$blue: #00ADEE;
+$white: rgb(255, 255, 255);
+
+@mixin flexAlign() {
+  display: flex;
+  align-items: center;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#nav-container {
+  width: 100%;
+  background-color: $blue;
+
+  .nav {
+    @include flexAlign;
+    margin: 0 auto;
+    width: 60%;
+    height: 66px;
+    justify-content: space-between;
+    background-color: $blue;
+    max-width: 900px;
+
+    &-left {
+      @include flexAlign;
+
+      &-links-container {
+        @include flexAlign;
+      }
+    }
+
+    &-right {
+      @include flexAlign;
+    }
+
+    &-link {
+      margin: 0 0.8rem;
+      color: $white;
+      background: none;
+      border: none;
+      text-decoration: none;
+      font-family: montserrat, sans-serif;
+      font-size: 10px;
+      font-weight: bold;
+  }
+
+  }
+}
